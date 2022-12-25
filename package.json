@@ -1,6 +1,7 @@
 {
   "name": "cocstorage-ui-editor",
   "version": "0.1.0",
+  "description": "Cocstorage React UI Editor Component",
   "main": "./dist/index.js",
   "module": "./dist/index.es.js",
   "types": "./dist/index.d.ts",
@@ -8,6 +9,15 @@
     "dist"
   ],
   "repository": "https://github.com/kimjh96/cocstorage-ui-editor",
+  "homepage": "https://63a8436965659ae13b9f832c-gamlfkdpti.chromatic.com",
+  "keywords": [
+    "react",
+    "react-component",
+    "react-editor",
+    "component",
+    "ui",
+    "editor"
+  ],
   "author": "cocstorage",
   "license": "MIT",
   "scripts": {
@@ -17,6 +27,7 @@
     "build-storybook": "build-storybook",
     "prettier": "prettier --write --config ./.prettierrc \"**/*.{js,ts,tsx}\"",
     "conventions": "yarn prettier && eslint --fix \"**/*.{js,ts,tsx}\"",
+    "prepare": "rm -rf dist && yarn build",
     "chromatic": "npx chromatic --project-token=c8ebc3c1aad3"
   },
   "devDependencies": {
