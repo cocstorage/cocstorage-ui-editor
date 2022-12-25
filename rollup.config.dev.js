@@ -31,7 +31,8 @@ export default outputs.map((output) => {
       babel({
         babelHelpers: 'runtime',
         exclude: 'node_modules/**',
-        plugins: ['@babel/plugin-transform-runtime'],
+        presets: ['@emotion/babel-preset-css-prop'],
+        plugins: ['@emotion', '@babel/plugin-transform-runtime'],
         extensions
       }),
       commonjs({

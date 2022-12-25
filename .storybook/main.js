@@ -12,11 +12,6 @@ module.exports = {
     builder: '@storybook/builder-webpack5'
   },
   webpackFinal: async (config) => {
-    config.module.rules.find((rule) => rule.test.test('.svg')).exclude = /\.svg$/;
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack']
-    });
     config.resolve.plugins = [
       ...(config.resolve.plugins || []),
       new TsconfigPathsPlugin({

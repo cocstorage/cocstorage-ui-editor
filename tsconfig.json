@@ -11,6 +11,12 @@
     "declaration": true,
     "declarationDir": ".",
     "skipLibCheck": true,
+    "paths": {
+      "@components": ["./src/components"],
+      "@components/*": ["./src/components/*"],
+      "@utils": ["./src/utils"],
+      "@utils/*": ["./src/utils/*"]
+    },
     "jsxImportSource": "@emotion/react"
   },
   "include": [
