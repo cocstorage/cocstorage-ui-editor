@@ -60,6 +60,8 @@ const Editor = forwardRef<HTMLDivElement, EditorProps>(function Editor(
         }
       };
     }
+
+    if (inputRef.current) inputRef.current.value = '';
   };
 
   const handleKeyUp = () => {

@@ -76,6 +76,7 @@ export function convertEditorContentsToReactElement(editorContents: EditorConten
                 src={content || ''}
                 alt={alt}
                 disableAspectRatio
+                disableBackgroundColor
                 {...(attributes as HTMLAttributes<HTMLImageElement>)}
               />
             );

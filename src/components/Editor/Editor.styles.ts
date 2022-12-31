@@ -22,9 +22,13 @@ export const Toolbar = styled.div`
 `;
 
 export const Content = styled(Typography)`
+  white-space: pre-wrap;
   padding: 8px;
   outline: 0;
   user-select: text;
+  * {
+    user-select: text;
+  }
   &:empty:before {
     content: attr(placeholder);
     color: ${({
