@@ -4,7 +4,7 @@ import { Image, Typography } from 'cocstorage-ui';
 
 import { EditorContent } from '../types';
 
-export function convertHtmlStringToEditorContents(html: string): EditorContent[] {
+export function convertFromHtmlString(html: string): EditorContent[] {
   const regexp = /<.*?>.*?<\/.*?>/g;
   const firstContent = html.replace(regexp, '');
   const contents: string[] = html.match(regexp) || [];
@@ -59,7 +59,7 @@ export function convertHtmlStringToEditorContents(html: string): EditorContent[]
     .filter(({ tag, children }) => tag && children.length > 0);
 }
 
-export function convertEditorContentsToReactElement(editorContents: EditorContent[]) {
+export function convertToReactElement(editorContents: EditorContent[]) {
   return editorContents.map(({ tag, children }) =>
     createElement(
       tag,
@@ -91,7 +91,7 @@ export function convertEditorContentsToReactElement(editorContents: EditorConten
   );
 }
 
-export function convertEditorContentsToHtmlString(editorContents: EditorContent[]) {
+export function convertToHtmlString(editorContents: EditorContent[]) {
   return editorContents
     .map(({ tag, children }) => {
       const wrapperElement = document.createElement(tag);

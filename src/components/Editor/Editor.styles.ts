@@ -7,7 +7,7 @@ export const StyledEditor = styled.div`
       theme: {
         palette: { box }
       }
-    }) => box.stroked.normal};
+    }) => box.filled.normal};
   border-radius: 8px;
 `;
 
@@ -18,11 +18,11 @@ export const Toolbar = styled.div`
       theme: {
         palette: { box }
       }
-    }) => box.stroked.normal};
+    }) => box.filled.normal};
 `;
 
 export const Content = styled(Typography)`
-  white-space: pre-wrap;
+  height: 100%;
   padding: 8px;
   outline: 0;
   user-select: text;
@@ -41,6 +41,6 @@ export const Content = styled(Typography)`
   & img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 6px;
   }
 `;

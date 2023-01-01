@@ -1,6 +1,6 @@
 import { ChangeEvent, forwardRef, useEffect, useRef } from 'react';
 
-import { convertEditorContentsToHtmlString, convertHtmlStringToEditorContents } from '@utils';
+import { convertFromHtmlString, convertToHtmlString } from '@utils';
 import { Button, CustomStyle, Icon } from 'cocstorage-ui';
 
 import { EditorContent } from '../../types';
@@ -56,7 +56,7 @@ const Editor = forwardRef<HTMLDivElement, EditorProps>(function Editor(
         contentRef.current.innerHTML = `${contentRef.current.innerHTML}<div>${img.outerHTML}</div>`;
 
         if (onChange && typeof onChange === 'function') {
-          onChange(convertHtmlStringToEditorContents(contentRef.current.innerHTML));
+          onChange(convertFromHtmlString(contentRef.current.innerHTML));
         }
       };
     }
@@ -68,7 +68,7 @@ const Editor = forwardRef<HTMLDivElement, EditorProps>(function Editor(
     if (!contentRef.current) return;
 
     if (onChange && typeof onChange === 'function') {
-      onChange(convertHtmlStringToEditorContents(contentRef.current.innerHTML));
+      onChange(convertFromHtmlString(contentRef.current.innerHTML));
     }
   };
 
@@ -83,7 +83,7 @@ const Editor = forwardRef<HTMLDivElement, EditorProps>(function Editor(
     ) {
       isInit.current = true;
       contentRef.current.innerHTML = initValue;
-      onChange(convertHtmlStringToEditorContents(contentRef.current.innerHTML));
+      onChange(convertFromHtmlString(contentRef.current.innerHTML));
     }
   }, [onChange, initValue]);
 
@@ -98,8 +98,8 @@ const Editor = forwardRef<HTMLDivElement, EditorProps>(function Editor(
       initEditorContents.length
     ) {
       isInit.current = true;
-      contentRef.current.innerHTML = convertEditorContentsToHtmlString(initEditorContents);
-      onChange(convertHtmlStringToEditorContents(contentRef.current.innerHTML));
+      contentRef.current.innerHTML = convertToHtmlString(initEditorContents);
+      onChange(convertFromHtmlString(contentRef.current.innerHTML));
     }
   }, [onChange, initEditorContents]);
 

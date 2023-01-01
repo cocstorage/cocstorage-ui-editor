@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { convertEditorContentsToReactElement } from '@utils';
+import { convertToReactElement } from '@utils';
 import { Box, Typography, useTheme } from 'cocstorage-ui';
 
 import type { EditorContent } from '../../types';
@@ -37,12 +37,12 @@ const Template: ComponentStory<typeof Editor> = function Template(args) {
   return (
     <>
       <Editor onChange={handleChange} onUploadImage={handleUploadImage} {...args} />
-      <Box customStyle={{ margin: '16px 0', borderTop: `1px solid ${box.stroked.normal}` }} />
+      <Box customStyle={{ margin: '16px 0', borderTop: `1px solid ${box.filled.normal}` }} />
       <Box
         customStyle={{
           padding: 8,
-          border: `1px solid ${box.stroked.normal}`,
-          borderRadius: 8
+          border: `1px solid ${box.filled.normal}`,
+          borderRadius: 6
         }}
       >
         <Typography variant="h2">ReactElement</Typography>
@@ -51,15 +51,15 @@ const Template: ComponentStory<typeof Editor> = function Template(args) {
             marginTop: 8
           }}
         >
-          {convertEditorContentsToReactElement(editorContents)}
+          {convertToReactElement(editorContents)}
         </Box>
       </Box>
-      <Box customStyle={{ margin: '16px 0', borderTop: `1px solid ${box.stroked.normal}` }} />
+      <Box customStyle={{ margin: '16px 0', borderTop: `1px solid ${box.filled.normal}` }} />
       <Box
         customStyle={{
           padding: 8,
-          border: `1px solid ${box.stroked.normal}`,
-          borderRadius: 8
+          border: `1px solid ${box.filled.normal}`,
+          borderRadius: 6
         }}
       >
         <Typography variant="h2">EditorContentsState</Typography>
