@@ -14,6 +14,8 @@ export interface EditorProps {
   placeholder?: string;
   disabled?: boolean;
   customStyle?: CustomStyle;
+  toolbarCustomStyle?: CustomStyle;
+  contentCustomStyle?: CustomStyle;
 }
 
 const Editor = forwardRef<HTMLDivElement, EditorProps>(function Editor(
@@ -25,6 +27,8 @@ const Editor = forwardRef<HTMLDivElement, EditorProps>(function Editor(
     placeholder = '내용을 입력해 주세요.',
     disabled,
     customStyle,
+    toolbarCustomStyle,
+    contentCustomStyle,
     ...props
   },
   ref
@@ -105,7 +109,7 @@ const Editor = forwardRef<HTMLDivElement, EditorProps>(function Editor(
 
   return (
     <StyledEditor ref={ref} css={customStyle}>
-      <Toolbar>
+      <Toolbar css={toolbarCustomStyle}>
         <Button
           variant="transparent"
           startIcon={<Icon name="ImageOutlined" />}
@@ -126,6 +130,7 @@ const Editor = forwardRef<HTMLDivElement, EditorProps>(function Editor(
         contentEditable={!disabled}
         placeholder={placeholder}
         {...props}
+        css={contentCustomStyle}
       />
     </StyledEditor>
   );
