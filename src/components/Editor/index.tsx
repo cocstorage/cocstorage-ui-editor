@@ -9,6 +9,8 @@ import { Content, StyledEditor, Toolbar } from './Editor.styles';
 export interface EditorProps {
   onChange?: (editorContents: EditorContent[]) => void;
   onUploadImage?: (file: File | null) => Promise<string> | string;
+  fullScreen?: boolean;
+  hideLine?: boolean;
   initEditorContents?: EditorContent[];
   initValue?: string;
   placeholder?: string;
@@ -22,6 +24,8 @@ const Editor = forwardRef<HTMLDivElement, EditorProps>(function Editor(
   {
     onChange,
     onUploadImage,
+    fullScreen,
+    hideLine,
     initEditorContents,
     initValue,
     placeholder = '내용을 입력해 주세요.',
@@ -108,8 +112,8 @@ const Editor = forwardRef<HTMLDivElement, EditorProps>(function Editor(
   }, [onChange, initEditorContents]);
 
   return (
-    <StyledEditor ref={ref} css={customStyle}>
-      <Toolbar css={toolbarCustomStyle}>
+    <StyledEditor ref={ref} fullScreen={fullScreen} hideLine={hideLine} css={customStyle}>
+      <Toolbar hideLine={hideLine} css={toolbarCustomStyle}>
         <Button
           variant="transparent"
           startIcon={<Icon name="ImageOutlined" />}
@@ -129,8 +133,9 @@ const Editor = forwardRef<HTMLDivElement, EditorProps>(function Editor(
         onKeyUp={handleKeyUp}
         contentEditable={!disabled}
         placeholder={placeholder}
-        {...props}
+        fullScreen={fullScreen}
         css={contentCustomStyle}
+        {...props}
       />
     </StyledEditor>
   );

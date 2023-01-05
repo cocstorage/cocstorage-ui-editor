@@ -60,10 +60,13 @@ export function convertFromHtmlString(html: string): EditorContent[] {
 }
 
 export function convertToReactElement(editorContents: EditorContent[]) {
-  return editorContents.map(({ tag, children }) =>
+  return editorContents.map(({ tag, children }, index) =>
     createElement(
       tag,
-      {},
+      {
+        // eslint-disable-next-line react/no-array-index-key
+        key: `content-${tag}-${index}`
+      },
       children.map(
         ({
           tag: childrenTag,
