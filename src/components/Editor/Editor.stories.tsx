@@ -36,7 +36,7 @@ const Template: ComponentStory<typeof Editor> = function Template(args) {
 
   return (
     <>
-      <Editor onChange={handleChange} onUploadImage={handleUploadImage} fullScreen {...args} />
+      <Editor onChange={handleChange} onUploadImage={handleUploadImage} {...args} />
       <Box customStyle={{ margin: '16px 0', borderTop: `1px solid ${box.filled.normal}` }} />
       <Box
         customStyle={{

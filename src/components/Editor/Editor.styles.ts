@@ -1,5 +1,4 @@
-import { CSSObject } from '@emotion/react';
-import styled from '@emotion/styled';
+import styled, { CSSObject } from '@emotion/styled';
 import { Typography } from 'cocstorage-ui';
 
 import { EditorProps } from '.';
@@ -7,8 +6,6 @@ import { EditorProps } from '.';
 export const StyledEditor = styled.div<Pick<EditorProps, 'fullScreen' | 'hideLine'>>`
   display: flex;
   flex-direction: column;
-
-  border-radius: 8px;
 
   ${({
     theme: {
@@ -18,9 +15,9 @@ export const StyledEditor = styled.div<Pick<EditorProps, 'fullScreen' | 'hideLin
   }): CSSObject =>
     !hideLine
       ? {
-          borderBottom: `1px solid ${box.filled.normal}`
+          border: `1px solid ${box.filled.normal}`
         }
-      : {}}
+      : {}};
 
   ${({ fullScreen }): CSSObject =>
     fullScreen
@@ -28,7 +25,9 @@ export const StyledEditor = styled.div<Pick<EditorProps, 'fullScreen' | 'hideLin
           width: '100%',
           height: '100%'
         }
-      : {}}
+      : {
+          borderRadius: 8
+        }}
 `;
 
 export const Toolbar = styled.div<Pick<EditorProps, 'hideLine'>>`

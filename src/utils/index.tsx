@@ -68,14 +68,15 @@ export function convertToReactElement(editorContents: EditorContent[]) {
         key: `content-${tag}-${index}`
       },
       children.map(
-        ({
-          tag: childrenTag,
-          content = '',
-          attributes: { alt = 'Content Img', ...attributes }
-        }) => {
+        (
+          { tag: childrenTag, content = '', attributes: { alt = 'Content Img', ...attributes } },
+          childrenIndex
+        ) => {
           if (childrenTag === 'img') {
             return (
               <Image
+                // eslint-disable-next-line react/no-array-index-key
+                key={`content-${tag}-${index}-image-${content}`}
                 src={content || ''}
                 alt={alt}
                 disableAspectRatio
@@ -85,9 +86,15 @@ export function convertToReactElement(editorContents: EditorContent[]) {
             );
           }
           if (childrenTag === 'br') {
-            return <br />;
+            // eslint-disable-next-line react/no-array-index-key
+            return <br key={`content-${tag}-${index}-br-${childrenIndex}`} />;
           }
-          return <Typography>{content}</Typography>;
+          return (
+            // eslint-disable-next-line react/no-array-index-key
+            <Typography key={`content-${tag}-${index}-typography-${childrenIndex}`}>
+              {content}
+            </Typography>
+          );
         }
       )
     )
