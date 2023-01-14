@@ -23,7 +23,8 @@ export const StyledEditor = styled.div<Pick<EditorProps, 'fullScreen' | 'hideLin
     fullScreen
       ? {
           width: '100%',
-          height: '100%'
+          height: '100%',
+          flex: 1
         }
       : {
           borderRadius: 8
@@ -46,7 +47,6 @@ export const Toolbar = styled.div<Pick<EditorProps, 'hideLine'>>`
 `;
 
 export const Content = styled(Typography)<Pick<EditorProps, 'fullScreen'>>`
-  height: 100%;
   padding: 8px;
   outline: 0;
   user-select: text;
@@ -54,6 +54,7 @@ export const Content = styled(Typography)<Pick<EditorProps, 'fullScreen'>>`
   * {
     user-select: text;
   }
+  overflow-y: auto;
   &:empty:before {
     content: attr(placeholder);
     color: ${({
@@ -67,6 +68,15 @@ export const Content = styled(Typography)<Pick<EditorProps, 'fullScreen'>>`
     max-width: 100%;
     height: auto;
     border-radius: 6px;
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &::-webkit-scrollbar-track {
+    display: none;
+  }
+  &::-webkit-scrollbar-thumb {
+    display: none;
   }
 
   ${({ fullScreen }): CSSObject =>

@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { convertToReactElement } from '@utils';
+import convertToReactElement from '@utils/convertToReactElement';
 import { Box, Typography, useTheme } from 'cocstorage-ui';
 
 import type { EditorContent } from '../../types';
@@ -30,9 +30,7 @@ const Template: ComponentStory<typeof Editor> = function Template(args) {
 
   const handleChange = (newEditorContents: EditorContent[]) => setEditorContents(newEditorContents);
 
-  const handleUploadImage = () => {
-    return 'https://static.cocstorage.com/assets/hotlink-ok/logo.png';
-  };
+  const handleUploadImage = () => 'https://static.cocstorage.com/assets/hotlink-ok/logo.png';
 
   return (
     <>

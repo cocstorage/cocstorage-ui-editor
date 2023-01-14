@@ -1,6 +1,7 @@
 import { ChangeEvent, forwardRef, useEffect, useRef } from 'react';
 
-import { convertFromHtmlString, convertToHtmlString } from '@utils';
+import convertFromHtmlString from '@utils/convertFromHtmlString';
+import convertToHtmlString from '@utils/convertToHtmlString';
 import { Button, CustomStyle, Icon } from 'cocstorage-ui';
 
 import { EditorContent } from '../../types';
