@@ -136,6 +136,7 @@ const Editor = forwardRef<HTMLDivElement, EditorProps>(function Editor(
         placeholder={placeholder}
         fullScreen={fullScreen}
         css={contentCustomStyle}
+        spellCheck={false}
         {...props}
       />
     </StyledEditor>
