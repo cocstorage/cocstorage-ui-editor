@@ -4451,10 +4451,10 @@ clone-response@^1.0.2:
   dependencies:
     mimic-response "^1.0.0"
 
-cocstorage-ui@^0.1.45:
-  version "0.1.45"
-  resolved "https://registry.yarnpkg.com/cocstorage-ui/-/cocstorage-ui-0.1.45.tgz#0320b776920c620d541c9b99a2304419b4248d3b"
-  integrity sha512-5M4Bl2JmnHCNIZ5v3xL+B27AxgvEHW742vkzpAtK8R9tJlQWh3SC8hllQt7NlPa1hvi6fDLgVQNV3Q0JpAuk2w==
+cocstorage-ui@^0.1.46:
+  version "0.1.46"
+  resolved "https://registry.yarnpkg.com/cocstorage-ui/-/cocstorage-ui-0.1.46.tgz#4d75929a9e94602a53715a583311e0c8bef0706d"
+  integrity sha512-2I8ipPK3BoIh43zXohTsJFRaTz3dWZUFKbaT3D4bdVEzPR7uyR2H/FZg0N2eQ/B5VdSNv0aCXX9j4+W3Tw056w==
 
 collapse-white-space@^1.0.2:
   version "1.0.6"
