@@ -1,6 +1,6 @@
 {
   "name": "cocstorage-ui-editor",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Cocstorage React UI Editor Component",
   "main": "./dist/index.js",
   "module": "./dist/index.es.js",
