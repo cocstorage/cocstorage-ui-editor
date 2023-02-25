@@ -117,8 +117,15 @@ const Editor = forwardRef<HTMLDivElement, EditorProps>(function Editor(
       <Toolbar hideLine={hideLine} css={toolbarCustomStyle}>
         <Button
           variant="transparent"
+          size="big"
           startIcon={<Icon name="ImageOutlined" />}
           onClick={handleClick}
+          customStyle={{
+            '& svg': {
+              width: 24,
+              height: 24
+            }
+          }}
         >
           <input
             ref={inputRef}
