@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
+import { Box, Typography, useTheme } from '@cocstorage/ui';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import convertToReactElement from '@utils/convertToReactElement';
-import { Box, Typography, useTheme } from 'cocstorage-ui';
 
 import type { EditorContent } from '../../types';
 

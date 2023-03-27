@@ -1,6 +1,6 @@
 import { HTMLAttributes, createElement } from 'react';
 
-import { Image, Typography } from 'cocstorage-ui';
+import { Image, Typography } from '@cocstorage/ui';
 
 import { EditorContent } from '../types';
 

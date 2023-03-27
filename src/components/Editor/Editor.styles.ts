@@ -1,5 +1,5 @@
+import { Typography } from '@cocstorage/ui';
 import styled, { CSSObject } from '@emotion/styled';
-import { Typography } from 'cocstorage-ui';
 
 import { EditorProps } from '.';
 

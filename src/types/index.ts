@@ -1,6 +1,6 @@
 import type { HTMLProps } from 'react';
 
-import type { CustomStyle } from 'cocstorage-ui';
+import type { CustomStyle } from '@cocstorage/ui';
 
 export type EditorContent = {
   key: string;
