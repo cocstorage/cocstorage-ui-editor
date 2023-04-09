@@ -2,20 +2,19 @@ import { DEFAULT_EXTENSIONS } from '@babel/core';
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
+import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import { terser } from 'rollup-plugin-terser';
-
-import packageJson from './package.json';
 
 const outputs = [
   {
-    file: packageJson.main,
-    format: 'cjs'
+    file: 'dist/index.js',
+    format: 'cjs',
+    interop: 'auto'
   },
   {
-    file: packageJson.module,
-    format: 'esm'
+    file: 'dist/index.es.js',
+    format: 'es'
   }
 ];
 
@@ -31,8 +30,7 @@ export default outputs.map((output) => {
       babel({
         babelHelpers: 'runtime',
         exclude: 'node_modules/**',
-        presets: ['@emotion/babel-preset-css-prop'],
-        plugins: ['@emotion', '@babel/plugin-transform-runtime'],
+        plugins: ['@babel/plugin-transform-runtime'],
         extensions
       }),
       commonjs({

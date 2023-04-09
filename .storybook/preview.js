@@ -1,4 +1,4 @@
-import { ThemeProvider } from 'cocstorage-ui';
+import { ThemeProvider } from '@cocstorage/ui';
 
 export const parameters = {
   controls: {
