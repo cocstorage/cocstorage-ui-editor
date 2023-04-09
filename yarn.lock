@@ -1285,10 +1285,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@cocstorage/ui-icons@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@cocstorage/ui-icons/-/ui-icons-0.0.1.tgz#2f241090af48d556a4b9ede49cad37b3e43214f2"
-  integrity sha512-0DLcmQCWOhdJx1UeKb7APg5BcA6osfMUeAp/bl78OvhIog1haaRIGYAVGjGLxCwfrM9s8rE8kuHtcOE8xXsdVg==
+"@cocstorage/ui-icons@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@cocstorage/ui-icons/-/ui-icons-0.0.2.tgz#40cc6b51d2575aacba4a9eeac933988090cf5b11"
+  integrity sha512-BHYrb2qWMAy35x5q1W9FsSVwYNPtIR+0liAkFHBd2vyVoPjO+c2VVBhha904dDNcmW30TpMAmj8Zcg5/l58J9Q==
 
 "@cocstorage/ui@^0.1.56":
   version "0.1.56"
