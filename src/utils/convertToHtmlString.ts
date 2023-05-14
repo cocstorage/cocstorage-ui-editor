@@ -1,4 +1,4 @@
-import { EditorContent } from '../types';
+import { EditorContent } from '@types';
 
 export default function convertToHtmlString(editorContents: EditorContent[]) {
   return editorContents

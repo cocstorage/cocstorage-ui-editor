@@ -1,6 +1,4 @@
-import type { HTMLProps } from 'react';
-
-import type { CustomStyle } from '@cocstorage/ui';
+import { HTMLProps } from 'react';
 
 export type EditorContent = {
   key: string;
@@ -11,8 +9,4 @@ export type EditorContent = {
     content: string | null;
     attributes: Partial<Record<keyof HTMLProps<HTMLElement>, string>>;
   }[];
-};
-
-export type GenericComponentProps<T> = T & {
-  customStyle?: CustomStyle;
 };

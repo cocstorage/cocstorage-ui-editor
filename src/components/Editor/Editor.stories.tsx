@@ -1,25 +1,22 @@
-import { useState } from 'react';
+import { RefAttributes, useState } from 'react';
 
 import { Box, Typography, useTheme } from '@cocstorage/ui';
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
+import { EditorContent } from '@types';
 import convertToReactElement from '@utils/convertToReactElement';
 
-import type { EditorContent } from '../../types';
+import Editor, { EditorProps } from '.';
 
-import Editor from '.';
+const meta: Meta<typeof Editor> = {
+  title: 'Components/Editor',
+  component: Editor
+};
 
-export default {
-  title: 'Editor',
-  component: Editor,
-  argTypes: {
-    placeholder: {
-      control: { type: 'text' }
-    }
-  }
-} as ComponentMeta<typeof Editor>;
+export default meta;
+type Story = StoryObj<typeof Editor>;
 
-const Template: ComponentStory<typeof Editor> = function Template(args) {
+function EditorWithHooks(args: EditorProps & RefAttributes<HTMLDivElement>) {
   const {
     theme: {
       palette: { box }
@@ -34,7 +31,7 @@ const Template: ComponentStory<typeof Editor> = function Template(args) {
 
   return (
     <>
-      <Editor onChange={handleChange} onUploadImage={handleUploadImage} {...args} />
+      <Editor {...args} onChange={handleChange} onUploadImage={handleUploadImage} />
       <Box customStyle={{ margin: '16px 0', borderTop: `1px solid ${box.filled.normal}` }} />
       <Box
         customStyle={{
@@ -71,6 +68,8 @@ const Template: ComponentStory<typeof Editor> = function Template(args) {
       </Box>
     </>
   );
-};
+}
 
-export const Default = Template.bind({});
+export const Default: Story = {
+  render: (args) => <EditorWithHooks {...args} />
+};

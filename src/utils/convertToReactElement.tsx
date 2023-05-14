@@ -2,7 +2,7 @@ import { HTMLAttributes, createElement } from 'react';
 
 import { Image, Typography } from '@cocstorage/ui';
 
-import { EditorContent } from '../types';
+import { EditorContent } from '@types';
 
 export default function convertToReactElement(editorContents: EditorContent[]) {
   return editorContents.map(({ key, tag, children }) =>

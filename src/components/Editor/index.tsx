@@ -2,10 +2,10 @@ import { ChangeEvent, forwardRef, useEffect, useRef } from 'react';
 
 import { Button, CustomStyle } from '@cocstorage/ui';
 import Icon from '@cocstorage/ui-icons';
+import { EditorContent } from '@types';
 import convertFromHtmlString from '@utils/convertFromHtmlString';
 import convertToHtmlString from '@utils/convertToHtmlString';
 
-import { EditorContent } from '../../types';
 import { Content, StyledEditor, Toolbar } from './Editor.styles';
 
 export interface EditorProps {

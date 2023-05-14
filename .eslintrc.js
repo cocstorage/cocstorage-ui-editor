@@ -21,6 +21,7 @@ module.exports = {
         tsx: 'never'
       }
     ],
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'react/prop-types': 'off',
     'react/require-default-props': 'off',
     'react/jsx-filename-extension': [

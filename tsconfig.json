@@ -1,6 +1,14 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "paths": {
+      "@components": ["./src/components"],
+      "@components/*": ["./src/components/*"],
+      "@types": ["./src/types"],
+      "@types/*": ["./src/types/*"],
+      "@utils": ["./src/utils"],
+      "@utils/*": ["./src/utils/*"]
+    },
     "target": "es5",
     "module": "esnext",
     "lib": ["dom", "esnext"],
@@ -11,12 +19,8 @@
     "declaration": true,
     "declarationDir": ".",
     "skipLibCheck": true,
-    "paths": {
-      "@components": ["./src/components"],
-      "@components/*": ["./src/components/*"],
-      "@utils": ["./src/utils"],
-      "@utils/*": ["./src/utils/*"]
-    },
+    "noEmit": true,
+    "resolveJsonModule": true,
     "jsxImportSource": "@emotion/react"
   },
   "include": [

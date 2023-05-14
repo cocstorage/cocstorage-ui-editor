@@ -1,6 +1,5 @@
+import { EditorContent } from '@types';
 import createUniqueKey from '@utils/createUniqueKey';
-
-import { EditorContent } from '../types';
 
 export default function convertFromHtmlString(html: string): EditorContent[] {
   const regexp = /<.*?>.*?<\/.*?>/g;
