@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/react';
-import { ThemeProvider } from "@cocstorage/ui";
+import { ThemeProvider } from '@cocstorage/ui';
 
 const preview: Preview = {
   parameters: {
